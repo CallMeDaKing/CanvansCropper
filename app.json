@@ -1,0 +1,14 @@
+{
+  "pages": [
+    
+
+    "pages/addFriendsPic/addFriendsPic"
+
+  ],
+   "window": {
+   "backgroundTextStyle": "light",
+   "navigationBarBackgroundColor": "#1D1A23",
+   "navigationBarTitleText": "canvas固定区域裁剪",
+   "navigationBarTextStyle": "white"
+  }
+}

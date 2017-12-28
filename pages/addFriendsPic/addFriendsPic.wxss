@@ -1,0 +1,118 @@
+.container{
+  padding: 0;
+  position: relative;
+}
+image{
+  padding: 0;
+  position: fixed;
+}
+.title{
+  width: 517rpx;
+  height: 53rpx;
+  position: absolute;
+  top: 80rpx;
+  left: 116.5rpx;
+}
+
+.showPic{
+
+  width: 387rpx;
+  height: 387rpx;
+  position: absolute;
+  top: 240rpx; 
+  left: 184rpx;
+  border-radius: 193.5rpx;
+
+}
+.img {
+  width: 100%;
+  height: 500rpx;
+  position: absolute;
+  top: 183.5rpx; 
+  overflow: hidden;
+}
+/* .img image {
+  height:400px;
+} */
+.cover_image{
+  width: 382rpx;
+  height: 387rpx;
+  position: absolute;
+  top: 240rpx;
+  left: 184rpx;
+}
+.point{
+
+  position: absolute;
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 6rpx;
+  left: 372.5rpx;
+  top: 228rpx;
+}
+.item1{
+
+  position: absolute;
+  width: 98rpx;
+  height: 98rpx;
+  left: 90rpx;
+  border-radius: 49rpx;
+  top: 717rpx;
+
+}
+.item2{
+
+  position: absolute;
+  width: 98rpx;
+  height: 98rpx;
+  left: 208rpx;
+  border-radius: 49rpx;
+  top: 717rpx;
+
+}
+.item3{
+
+  position: absolute;
+  width: 98rpx;
+  height: 98rpx;
+  left: 325rpx;
+  border-radius: 49rpx;
+  top: 717rpx;
+
+}
+.item4{
+
+  position: absolute;
+  width: 98rpx;
+  height: 98rpx;
+  right: 208rpx;
+  border-radius: 49rpx;
+  top: 717rpx;
+
+}
+.item5{
+
+  position: absolute;
+  width: 98rpx;
+  height: 98rpx;
+  right: 90rpx;
+  border-radius: 49rpx;
+  top: 717rpx;
+
+}
+.delete{
+
+  position: absolute;
+  width: 116.4rpx;
+  height: 170.7rpx;
+  left: 139rpx;
+  bottom: 84rpx;
+
+}
+.next{
+  width: 116.4rpx;
+  height: 170.7rpx;
+  position: absolute;
+  right: 139rpx;
+  bottom: 84rpx;
+}

@@ -1,0 +1,32 @@
+<view class ="container" >
+<!--背景图  -->
+<image class='image' src='../../Resource/cover.jpg' style='width:{{imageWidth}}px; height:{{imageHeight}}px;'>
+<!--中间照片圆框展示  -->
+
+
+<!--中间的图片显示  -->
+<view class="img" catchtouchstart="touchstartCallback"  catchtouchmove="touchmoveCallback" catchtouchend="touchendCallback">
+    <image style="transform:translate({{stv.offsetX}}px, {{stv.offsetY}}px) scale({{stv.scale}}); height:{{pic_height}}rpx; width:{{pic_width}}rpx; position:absolute; left:{{pic_L}}rpx; top:{{pic_T}}rpx;" src='{{temp_file_path}}'></image>   
+  </view>
+<canvas canvas-id="myCanvas" style="position:absolute;border: 1px solid red; width:{{imageW}}rpx;height:{{imageH}}rpx;top:-9999px;left:-9999px; background-color:red; opacity:0.5" ></canvas>
+<!--  -->
+<image wx:if="{{isDone ===true}}" src='{{cut_url}}' class='cover_image' style='border-radius: 193.5rpx;'></image>
+<image class='point' src='../../Resource/9/点.png'></image>
+<image class='cover_image' src='../../Resource/9/cycle.png'></image>
+
+<!--五张照片展示-->
+<image class='item1'  src="{{lock_image_1}}" bindtap='add_lock_image_1' mode='aspectFit'></image>
+<image class='item2'  src="{{lock_image_2}}" bindtap='add_lock_image_2' mode='aspectFit'></image>
+<image class='item3'  src="{{lock_image_3}}" bindtap='add_lock_image_3' mode='aspectFit'></image>
+<image class='item4'  src="{{lock_image_4}}" bindtap='add_lock_image_4' mode='aspectFit'></image>
+<image class='item5'  src="{{lock_image_5}}" bindtap='add_lock_image_5' mode='aspectFit'></image>
+
+<!--覆盖对号和加号  -->
+<image class='itemRight' src='../../Resource/9/right.png'></image>
+<image class='itemPlus' src='../../Resource/9/plus.png'></image>
+
+<!--删除和下一步  -->
+<image class='delete'  src='../../Resource/9/delete.png' catchtap=''></image>
+<image class='next'  src='../../Resource/9/next.png' bindtap='create_letter'></image>
+</image>
+</view>
