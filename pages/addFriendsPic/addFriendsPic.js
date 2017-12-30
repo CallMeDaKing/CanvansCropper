@@ -1,7 +1,7 @@
 var fucking = require('../../utils/fucking.js')
 var kScreenW = 750;
 var drag_top = 183.5; //拖动区域绝对距上位置
-
+var view_H = 500;   //外层view的高度
 var pic_area = 700;  //照片展示区域（宽高都为500）   注意小于拖动区域
 //上传的图片信息
 
@@ -185,8 +185,6 @@ Page({
     //每次选择照片时初始化这几个个值
     pic_newW = 0;
     pic_newH = 0;  
-    move_scale_L = 0;
-    move_scale_T = 0;
     x_move = 0;
     y_move = 0;
 
@@ -248,46 +246,35 @@ Page({
               //以宽边为参考
               pic_newW = pic_area;
               pic_newH = pic_area / pic_radio;
+              move_scale_L = Math.ceil((pic_area - cropper_w_h) / 2);
+              move_scale_T = Math.ceil((pic_area / pic_radio - cropper_w_h) / 2);
               that.setData({
-
                 pic_width: pic_area,
                 pic_height: pic_area / pic_radio,
                 pic_L: (kScreenW - pic_area) /2,
-                pic_T: (500 -(pic_area / pic_radio) ) / 2, 
-                
+                pic_T: (view_H -(pic_area / pic_radio) ) / 2, 
+                cutT: Math.ceil((pic_area / pic_radio - cropper_w_h) / 2),
+                cutL: Math.ceil((pic_area - cropper_w_h) / 2),
               })
 
-              // 设置裁剪框需要裁剪的位置
-              if (cropper_w_h > (pic_area / pic_radio)) {
-                that.setData({
-                  cutT: Math.ceil((pic_area / pic_radio - cropper_w_h) / 2),
-                })
-              } else {
-
-                that.setData({
-                  cutT: Math.ceil((pic_area / pic_radio - cropper_w_h) / 2),
-                })
-              }
               
             } else {
-
-            
               //以高度为参考
               pic_newW = pic_area * pic_radio;
               pic_newH = pic_area;
+              move_scale_L = Math.ceil((pic_area * pic_radio - cropper_w_h) / 2);
+              move_scale_T = Math.ceil((pic_area - cropper_w_h) / 2);
+
               that.setData({
                 pic_width: pic_area * pic_radio,
                 pic_height: pic_area,
                 pic_L: (kScreenW - (pic_area * pic_radio)) / 2,
-                pic_T: (500 - pic_area)/2,       //确保图像在canvas中心区域 ，方便后面计算裁剪的位置和大小
-                
+                pic_T: (view_H - pic_area)/2,       //确保图像在canvas中心区域 ，方便后面计算裁剪的位置和大小
                 //canvas裁剪框距上位置
-                cutT: Math.ceil(( cropper_w_h - pic_area ) / 2),
+                cutT: Math.ceil( (pic_area - cropper_w_h ) / 2),
+                cutL: Math.ceil( (pic_area * pic_radio - cropper_w_h)/2 ),
               }) 
-
-                that.setData({
-                  cutT: Math.ceil((pic_area - cropper_w_h) / 2),
-                })
+             
   
             }
             that.setData({
@@ -295,7 +282,6 @@ Page({
               imageW: res.width * pixelRatio,
               imageH: res.height * pixelRatio,
               //canvas裁剪框距左位置
-              cutL: Math.ceil((pic_area - cropper_w_h) / 2),
               })
               console.log("最初的cutL",that.data.cutL)
               console.log("最初的cutT", that.data.cutT)
